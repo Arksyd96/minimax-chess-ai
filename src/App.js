@@ -4,7 +4,6 @@ import Chess from 'chess.js'
 import * as pe from './piecesEvalution'
 import './App.css'
 
-
 class App extends React.Component {
 	state = { fen: 'start', pieceSquare: '' };
 
@@ -32,9 +31,7 @@ class App extends React.Component {
 
 	minimax = (depth, alpha, beta, isPlayer) => {
 		if (depth === 0) {
-			let val = this.evaluateBoard();
-			//console.log(val);
-			return -val;
+			return -this.evaluateBoard();
 		}
 
 		const newGameMoves = this.game.moves();
@@ -71,7 +68,7 @@ class App extends React.Component {
 		this.game.SQUARES.forEach(square => {
 			totalEvaluation = totalEvaluation + this.getPieceValue(square);
 		});
-		
+
 		return totalEvaluation;
 	};
 
@@ -80,7 +77,7 @@ class App extends React.Component {
 		if (piece != null) {
 			let pos = this.getPositionBySquare(square)
 			let absoluteValue = this.getAbsluteValue(piece, pos.x, pos.y)
-			return (piece.type === 'w' ? absoluteValue : -absoluteValue)
+			return (piece.color === 'w' ? absoluteValue : -absoluteValue)
 		}
 		return 0;
 	}
@@ -189,33 +186,8 @@ class App extends React.Component {
 
 	getPositionBySquare = square => {
 		let position = { x: undefined, y: undefined }
-		switch (square.charAt(0)) {
-			case 'a':
-				position.y = 0
-				break;
-			case 'b':
-				position.y = 1
-				break;
-			case 'c':
-				position.y = 2
-				break;
-			case 'd':
-				position.y = 3
-				break;
-			case 'e':
-				position.y = 4
-				break;
-			case 'f':
-				position.y = 5
-				break;
-			case 'g':
-				position.y = 6
-				break;
-			case 'h':
-				position.y = 7
-				break;
-			default:
-		}
+		let dict = { 'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7}
+		position.y = dict[square.charAt(0)]
 		position.x = 8 - parseInt(square.charAt(1))
 		return position;
 	}

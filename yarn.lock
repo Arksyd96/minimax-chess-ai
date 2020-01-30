@@ -2541,10 +2541,10 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chess.js@^0.10.2:
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/chess.js/-/chess.js-0.10.2.tgz#eacefa2067155f87f046e80cc12d2019eef1b81a"
-  integrity sha1-6s76IGcVX4fwRugMwS0gGe7xuBo=
+chess.js@0.9.4:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/chess.js/-/chess.js-0.9.4.tgz#0023c74216fda685dfe205a097e3ac5b5e63750e"
+  integrity sha1-ACPHQhb9poXf4gWgl+OsW15jdQ4=
 
 chessboardjsx@^2.4.2:
   version "2.4.2"
